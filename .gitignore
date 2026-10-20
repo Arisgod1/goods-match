@@ -1,0 +1,6 @@
+.DS_Store
+*.map
+*.ts
+*.xlsx
+.env
+.env.*
