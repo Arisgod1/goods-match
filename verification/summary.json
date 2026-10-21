@@ -18,7 +18,7 @@
   "regressionTestsPassed": true,
   "creatorBuildPassed": true,
   "change": "Home clear-save button with cancel/confirm dialog; atomic GameSave.reset; refresh home on success; preserve old data on write failure.",
-  "previousVersionValidation": "Existing gameplay and standalone checks refer to source a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e. This change only updates the launcher template, pipeline test and migration documentation.",
+  "previousVersionValidation": "Earlier standalone re-open/build and broad gameplay checks refer to source a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e. Current reset feature passed the full registered test suites, Creator build, type baseline comparison and local HTTP startup.",
   "browserVerified": [
     "Local HTTP startup and home button visibility"
   ],
