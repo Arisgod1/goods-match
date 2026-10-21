@@ -69,6 +69,14 @@ export class GameSave {
         return success()
     }
 
+    public static reset(): ActionResult {
+        // Keep reset atomic: a failed write must preserve both the current save and UI state.
+        return this.transact(next => {
+            Object.assign(next, this.defaults())
+            return success()
+        })
+    }
+
     public static transact<T>(change: (next: SaveData) => ActionResult<T>): ActionResult<T> {
         const next = this.Data
         if (!next) return failure('storage_error')

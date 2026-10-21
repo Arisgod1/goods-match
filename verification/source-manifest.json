@@ -1,5 +1,5 @@
 {
-  "sourceId": "a516b4fac616e84a38e11e53243a826078ee8907a250d71759a8520ac0d8b01d",
+  "sourceId": "6dc578b35a2a83a484c40eb3c2a17ee08dcf29643548c895e9ea31fa73a4f6c9",
   "files": [
     {
       "file": ".creator/asset-template/typescript/Custom Script Template Help Documentation.url",
@@ -2273,8 +2273,8 @@
     },
     {
       "file": "assets/bundles/ui/UIMain.prefab",
-      "bytes": 81943,
-      "sha256": "33fa5ebe9c783c5239b9328fdda0ffc6376b65e23916072fb186c988e5e9a9df"
+      "bytes": 89832,
+      "sha256": "55436b8b099b74e5e99b7b68d5aa84d4b7a2c838c7f836fe5361ea6f622be6e7"
     },
     {
       "file": "assets/bundles/ui/UIMain.prefab.meta",
@@ -3493,8 +3493,8 @@
     },
     {
       "file": "assets/scripts/manager/GameSave.ts",
-      "bytes": 4289,
-      "sha256": "ba33dbb179d7cb2314aae7f2ea69a1daa14336fa7755630c004fa5dccdc57d6c"
+      "bytes": 4561,
+      "sha256": "2acf8fbc7f2cd9c44ea5c6daf0175422fb6b9552698eafc735432b3f7606dd3a"
     },
     {
       "file": "assets/scripts/manager/GameSave.ts.meta",
@@ -3728,8 +3728,8 @@
     },
     {
       "file": "assets/scripts/ui/UIMain.ts",
-      "bytes": 1867,
-      "sha256": "802872938d53d5261751d7f74eb0ed8a6934d2d06a27ae6c15134481f0058dfb"
+      "bytes": 2913,
+      "sha256": "3df78d8246d5bfb8c65c5a5f5eac7556764f52a9332a7bae2dd7986ecae42237"
     },
     {
       "file": "assets/scripts/ui/UIMain.ts.meta",
@@ -4028,8 +4028,8 @@
     },
     {
       "file": "docs/development.md",
-      "bytes": 2938,
-      "sha256": "f006acd29c1368f38bf755bdb5ffe12602bbd2e654ee5d5fde5699204f759b67"
+      "bytes": 3415,
+      "sha256": "4652979c01967835f6eeecc2e1642350e6a04b02d3cd44e8bc89849c5df93642"
     },
     {
       "file": "docs/validation.md",
@@ -4143,8 +4143,8 @@
     },
     {
       "file": "tools/test-rewards.cjs",
-      "bytes": 56727,
-      "sha256": "5c107267eba2ca1fbbe8cd480bb1bc87f6f9bd9b341d874e0a197aeb79d0bfa0"
+      "bytes": 60708,
+      "sha256": "6e92125d3e685cf36a46eeb75a3ea4e37175892321bf8c8b5bcdf85feee96d45"
     },
     {
       "file": "tools/test-workbooks.cjs",

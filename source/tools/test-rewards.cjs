@@ -404,6 +404,43 @@ function check(name, fn) { return Promise.resolve().then(fn).then(() => { checks
         assert.equal(saved.get('hgxcds_game_v1'), '{bad'); const confirm = r.opens.at(-1).data; assert.equal(confirm.actions[0].label, '确定新建');
         assert.equal(confirm.actions[0].run().ok, true); assert.equal(saved.get('untouched'), 'keep'); assert.equal(r.GameSave.Data.levels[0], 0);
     });
+    await check('save reset: defaults commit atomically, preserve unrelated storage and reload', () => {
+        const saved=new Map([['untouched','keep'],['legacy_progress','keep']]),r=runtime(saved);
+        const defaults=plain(r.GameSave.Data);
+        r.patch(n=>{n.items[0]=2500;n.items[1]=9;n.levels=[15,10,3];n.unlockedModes=[0,1,2];n.dailyClaimDate='2026-10-21';n.lastPassReward=5;n.settings.bgmEnabled=false;});
+        const before=plain(r.GameSave.Data),disk=saved.get('hgxcds_game_v1'),events=r.events.length,writes=r.writes;
+        r.failWrites(true);assert.equal(r.GameSave.reset().reason,'storage_error');
+        assert.deepEqual(plain(r.GameSave.Data),before);assert.equal(saved.get('hgxcds_game_v1'),disk);assert.equal(r.events.length,events);
+        r.failWrites(false);assert.equal(r.GameSave.reset().ok,true);assert.equal(r.writes,writes+1);
+        assert.deepEqual(plain(r.GameSave.Data),defaults);assert.deepEqual(plain(runtime(saved).GameSave.Data),defaults);
+        assert.equal(saved.get('untouched'),'keep');assert.equal(saved.get('legacy_progress'),'keep');
+    });
+    await check('home reset: explicit confirmation, cancel does not write, success refreshes home, stale action rejected', () => {
+        const r=runtime(),Main=r.load('ui/UIMain').UIMain,ui=new Main();r.UIMgr.views.UIMain=ui;
+        r.patch(n=>{n.items[0]=1234;n.levels[0]=8;});const before=plain(r.GameSave.Data),writes=r.writes;
+        ui.onBtnClearSaveClick();const options=r.opens.at(-1).data;
+        assert.equal(r.opens.at(-1).name,'UIRecovery');assert.equal(options.actions[0].label,'取消');assert.equal(options.actions[1].label,'确定清除');
+        assert.ok(options.message.includes('无法撤销'));assert.deepEqual(plain(r.GameSave.Data),before);assert.equal(r.writes,writes);
+        options.actions[0].run();assert.equal(r.writes,writes);
+        const Recovery=r.load('ui/UIRecovery').UIRecovery,confirm=new Recovery();confirm.onOpen(options);r.GameMgr.mode=2;
+        confirm.onBtnSecondaryClick();assert.equal(confirm.closed,true);assert.equal(r.GameSave.Data.items[0],0);assert.equal(r.GameSave.Data.levels[0],0);assert.equal(r.GameMgr.mode,0);
+        assert.equal(r.opens.at(-2).name,'UIMain');assert.equal(r.opens.at(-1).data,'存档已清除');
+        assert.equal(options.actions[1].run().reason,'unavailable');
+        const prefab=JSON.parse(fs.readFileSync(path.join(root,'assets/bundles/ui/UIMain.prefab')));
+        const node=prefab.find(n=>n._name==='BtnClearSave'),parts=node._components.map(c=>prefab[c.__id__]);
+        assert.equal(parts.find(c=>c.__type__==='cc.UITransform')._contentSize.height,88);
+        const button=parts.find(c=>c.__type__==='cc.Button'),handler=prefab[button.clickEvents[0].__id__];
+        assert.equal(handler.handler,'onBtnClearSaveClick');assert.equal(handler.target.__id__,1);
+    });
+    await check('home reset: storage failure keeps confirmation retryable; leaving home cancels destructive action', () => {
+        const r=runtime(),Main=r.load('ui/UIMain').UIMain,ui=new Main();r.UIMgr.views.UIMain=ui;r.patch(n=>{n.items[0]=987;});
+        ui.onBtnClearSaveClick();const options=r.opens.at(-1).data,Recovery=r.load('ui/UIRecovery').UIRecovery,confirm=new Recovery();confirm.onOpen(options);
+        r.failWrites(true);confirm.onBtnSecondaryClick();assert.ok(!confirm.closed);assert.equal(confirm.processing,false);assert.equal(r.GameSave.Data.items[0],987);
+        assert.equal(confirm.findComp('BtnAction1').interactable,true);assert.ok(confirm.findComp('LbDesc').string.includes('重试'));
+        r.failWrites(false);confirm.onBtnSecondaryClick();assert.equal(confirm.closed,true);assert.equal(r.GameSave.Data.items[0],0);
+        const other=new Main();r.UIMgr.views.UIMain=other;other.onBtnClearSaveClick();const stale=r.opens.at(-1).data;r.GameMgr.leavingHome=true;
+        const writes=r.writes;assert.equal(stale.actions[1].run().reason,'unavailable');assert.equal(r.writes,writes);
+    });
     await check('home transition: next-frame daily popup suppressed as soon as start begins', async () => {
         const r = runtime(), Main = r.load('ui/UIMain').UIMain, Item = r.load('uiItem/MainItem').MainItem;
         const ui = new Main(); ui.parts.PageView = { scrollToPage() {} }; ui.onLoad(); r.UIMgr.views.UIMain = ui;

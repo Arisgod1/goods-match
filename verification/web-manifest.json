@@ -1,5 +1,5 @@
 {
-  "sourceId": "a516b4fac616e84a38e11e53243a826078ee8907a250d71759a8520ac0d8b01d",
+  "sourceId": "6dc578b35a2a83a484c40eb3c2a17ee08dcf29643548c895e9ea31fa73a4f6c9",
   "config": {
     "name": "货柜消除大师",
     "debug": true,
@@ -645,13 +645,13 @@
     },
     {
       "file": "assets/main/index.js",
-      "bytes": 361160,
-      "sha256": "b10644b2d79bc743b0f11470286c331302001b094d865edee30163164e0b9c98"
+      "bytes": 362896,
+      "sha256": "cc412a3942cd1ed2f93dc7547afd8f2666eff90b26407fa27122060dd1e9c944"
     },
     {
       "file": "assets/main/index.js.map",
-      "bytes": 531212,
-      "sha256": "e251e7ac1a8a4a7a6b61295a760c44a74162e8aa646ee64281ea87b9f3b85f26"
+      "bytes": 533731,
+      "sha256": "f22727f7cffcdf7f6ddfe9d1808c8cc6265a7a71edde604616e3ba81e746c3ce"
     },
     {
       "file": "assets/main/native/7d/7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca.png",
@@ -785,8 +785,8 @@
     },
     {
       "file": "assets/ui/import/03/035a98a70.json",
-      "bytes": 13080,
-      "sha256": "1fe9920a5fc6f1e80b18aed20e71a1c913f090e435cf056dae6c451bc2823466"
+      "bytes": 13929,
+      "sha256": "da8e21a2ef0d0d04aa7f62ea5d7d3716dd1af405e8067ed362bdd168ea1f6145"
     },
     {
       "file": "assets/ui/import/03/0385c9c03.json",

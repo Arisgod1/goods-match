@@ -1,13 +1,13 @@
 {
   "creatorVersion": "3.8.3",
-  "businessRegressionGroups": 40,
+  "businessRegressionGroups": 43,
   "existingTypeScriptErrors": 183,
   "newTypeScriptErrors": 0,
   "originalBuildUnchanged": true,
   "accountMetadataExcluded": true,
   "scenePrefabFiles": 29,
   "unresolvedResourceUUIDs": 0,
-  "sourceId": "a516b4fac616e84a38e11e53243a826078ee8907a250d71759a8520ac0d8b01d",
+  "sourceId": "6dc578b35a2a83a484c40eb3c2a17ee08dcf29643548c895e9ea31fa73a4f6c9",
   "sourceFiles": 831,
   "sourceFileHashesVerified": true,
   "sourceDirectory": "source",
@@ -17,6 +17,21 @@
   "showFPS": false,
   "regressionTestsPassed": true,
   "creatorBuildPassed": true,
-  "change": "Disable performance HUD in common launcher template; preserve readable JS and source maps.",
-  "previousVersionValidation": "Existing gameplay and standalone checks refer to source a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e. This change only updates the launcher template, pipeline test and migration documentation."
+  "change": "Home clear-save button with cancel/confirm dialog; atomic GameSave.reset; refresh home on success; preserve old data on write failure.",
+  "previousVersionValidation": "Existing gameplay and standalone checks refer to source a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e. This change only updates the launcher template, pipeline test and migration documentation.",
+  "browserVerified": [
+    "Local HTTP startup and home button visibility"
+  ],
+  "mockVerified": [
+    "Cancel does not write",
+    "Confirmed reset persists defaults across reload",
+    "Write failure preserves memory, storage and events; retry succeeds",
+    "Unrelated and legacy storage keys preserved",
+    "Stale home action rejected",
+    "Serialized button invokes the actual home reset handler"
+  ],
+  "limitations": [
+    "Mobile touch interaction not tested on a physical device",
+    "Full manual browser click-through interrupted by user switching active tabs; confirmation and storage flow verified using actual components with mocked Cocos interfaces"
+  ]
 }

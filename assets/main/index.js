@@ -3823,6 +3823,14 @@ System.register("chunks:///_virtual/GameSave.ts", ['./rollupPluginModLoBabelHelp
           this.state = next;
           return success();
         };
+        GameSave.reset = function reset() {
+          var _this = this;
+          // Keep reset atomic: a failed write must preserve both the current save and UI state.
+          return this.transact(function (next) {
+            Object.assign(next, _this.defaults());
+            return success();
+          });
+        };
         GameSave.transact = function transact(change) {
           var next = this.Data;
           if (!next) return failure('storage_error');
@@ -8213,8 +8221,8 @@ System.register("chunks:///_virtual/UILuckySpin.ts", ['./rollupPluginModLoBabelH
   };
 });
 
-System.register("chunks:///_virtual/UIMain.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './UIBase.ts', './UI.ts', './GameMgr.ts', './CoinItem.ts', './CoinMgr.ts', './AudioMgr.ts', './RewardMgr.ts', './UIMgr.ts'], function (exports) {
-  var _inheritsLoose, cclegacy, _decorator, Widget, PageView, tween, v3, UIBase, UI, GameMgr, CoinItem, CoinMgr, AudioMgr, RewardMgr, UIMgr;
+System.register("chunks:///_virtual/UIMain.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './UIBase.ts', './UI.ts', './GameMgr.ts', './CoinItem.ts', './CoinMgr.ts', './AudioMgr.ts', './RewardMgr.ts', './UIMgr.ts', './GameSave.ts', './RecoveryMgr.ts', './Mode.ts'], function (exports) {
+  var _inheritsLoose, cclegacy, _decorator, Widget, PageView, tween, v3, UIBase, UI, GameMgr, CoinItem, CoinMgr, AudioMgr, RewardMgr, UIMgr, success, GameSave, failure, RecoveryMgr, Mode;
   return {
     setters: [function (module) {
       _inheritsLoose = module.inheritsLoose;
@@ -8241,6 +8249,14 @@ System.register("chunks:///_virtual/UIMain.ts", ['./rollupPluginModLoBabelHelper
       RewardMgr = module.RewardMgr;
     }, function (module) {
       UIMgr = module.UIMgr;
+    }, function (module) {
+      success = module.success;
+      GameSave = module.GameSave;
+      failure = module.failure;
+    }, function (module) {
+      RecoveryMgr = module.RecoveryMgr;
+    }, function (module) {
+      Mode = module.Mode;
     }],
     execute: function () {
       var _dec, _dec2, _class;
@@ -8281,13 +8297,38 @@ System.register("chunks:///_virtual/UIMain.ts", ['./rollupPluginModLoBabelHelper
           this.coinItem.init(CoinMgr.CurCoin);
           AudioMgr.playBgm('主界面音乐');
           this.scheduleOnce(function () {
-            if (!GameMgr.leavingHome && UIMgr.get(UI.Main) === _this2 && RewardMgr.canClaimDaily()) {
+            if (!GameMgr.leavingHome && UIMgr.get(UI.Main) === _this2 && !UIMgr.get(UI.Recovery) && RewardMgr.canClaimDaily()) {
               _this2.open(UI.LoginReward);
             }
           });
         };
         _proto.onClose = function onClose(data) {
           this.unscheduleAllCallbacks();
+        };
+        _proto.onBtnClearSaveClick = function onBtnClearSaveClick() {
+          var _this3 = this;
+          if (GameMgr.leavingHome || UIMgr.get(UI.Main) !== this) return;
+          RecoveryMgr.show({
+            title: '清除存档？',
+            message: '将重置关卡进度、金币、道具、奖励领取记录和设置。此操作无法撤销，确定清除吗？',
+            actions: [{
+              label: '取消',
+              run: function run() {
+                return success();
+              }
+            }, {
+              label: '确定清除',
+              run: function run() {
+                return _this3.isValid && !GameMgr.leavingHome && UIMgr.get(UI.Main) === _this3 ? GameSave.reset() : failure('unavailable');
+              },
+              onSuccess: function onSuccess() {
+                GameMgr.mode = Mode.tp;
+                UIMgr.close(UI.Main);
+                UIMgr.open(UI.Main);
+                UIMgr.open(UI.Toast, '存档已清除');
+              }
+            }]
+          });
         };
         _proto.onBtnSettingClick = function onBtnSettingClick() {
           this.open(UI.Setting);
