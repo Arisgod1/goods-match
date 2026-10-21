@@ -1,6 +1,23 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
 const {sourceFiles,processProject,buildProblems,refs}=require('./cocos-project.cjs');
 assert.ok(sourceFiles(path.resolve(__dirname,'..')).includes('tools/test-pipeline.cjs'),'The source package must preserve its own regression tests');
+// Exercise the actual launcher template with debug enabled: readability must not enable the HUD.
+const launcher=fs.readFileSync(path.join(__dirname,'../build-templates/common/application.ejs'),'utf8')
+    .replace(/<%- include\([^\n]+%>/, '')
+    .replace('<%= settingsJsonPath %>', 'src/settings.json')
+    .replace('<%= debugMode %>', 'true')
+    .replace('export class Application', 'class Application');
+let initOptions;
+const App=new Function(launcher+'; return Application;')();
+const app=new App();
+app.init({DebugMode:{INFO:1,ERROR:0},game:{
+    onPostBaseInitDelegate:{add(){}},onPostSubsystemInitDelegate:{add(){}},
+    init(options){initOptions=options;return Promise.resolve();},run(){}
+}});
+app.start();
+assert.equal(initOptions.debugMode,1);
+assert.equal(initOptions.overrideSettings.profiling.showFPS,false,'Readable builds must not show runtime statistics');
+
 const root=fs.mkdtempSync(path.join(os.tmpdir(),'cocos-pipeline-'));
 try {
     for(const f of ['assets/a.ts','assets/a.ts.meta','tools/package-private-keys/a.key','assets/secret.pem','assets/id_rsa','assets/symlink-target','profiles/v2/local.json','build/a.js','assets/node_modules/a.js','docs/readme.md','tools/private.js','assets/.env.local','excel2ts/.npmrc','assets/SecretRoom.ts','assets/SecretRoom.ts.meta','settings/v2/packages/information.json']){

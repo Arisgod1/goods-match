@@ -1,5 +1,5 @@
 {
-  "sourceId": "a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e",
+  "sourceId": "a516b4fac616e84a38e11e53243a826078ee8907a250d71759a8520ac0d8b01d",
   "config": {
     "name": "货柜消除大师",
     "debug": true,
@@ -30,8 +30,8 @@
   "files": [
     {
       "file": "application.js",
-      "bytes": 3300,
-      "sha256": "3876486e03ffd49f5cb8bce6d5a23b7ec392a533487229483a3b2429530093f2"
+      "bytes": 3389,
+      "sha256": "2c98c0465bcbf86cabc0bd91e8af7104de50fb4955b840a67953bae59d19749b"
     },
     {
       "file": "assets/audio/config.json",
@@ -1513,6 +1513,5 @@
       "bytes": 1222,
       "sha256": "338fc9d734af60103e6d303333e28b413f477b295fd7dd233dc7022320c56e48"
     }
-  ],
-  "note": "Only local buildPath redacted; file hashes unchanged. Web files are deployed at repository root."
+  ]
 }

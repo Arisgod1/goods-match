@@ -15,7 +15,8 @@ System.register([], function (_export, _context) {
         function Application() {
           _classCallCheck(this, Application);
           this.settingsPath = 'src/settings.json';
-          this.showFPS = true;
+          // Readable builds keep debug symbols without displaying the performance HUD.
+          this.showFPS = false;
         }
         _createClass(Application, [{
           key: "init",

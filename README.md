@@ -39,10 +39,10 @@ python3 -m http.server 8080
 
 40 组业务回归及资源、交付工具、工作簿测试通过。独立副本安装、构建、启动、首关加载和拖拽消除已验证。TypeScript 仍有 183 个既有诊断，新增 0；并非完全无类型错误。审查发现的异步 UI 管理等问题记录在审查文档中，本次发布保留被审查版本，未额外修改玩法。
 
-Web 构建采用 `web-mobile`、`debug: true`、`sourceMaps: true`。调试版会显示性能统计。进度保存在当前浏览器的 `hgxcds_game_v1`，不支持跨设备同步。
+Web 构建采用 `web-mobile`、`debug: true`、`sourceMaps: true`。启动模板已关闭 FPS / Draw Calls 性能统计，保持可读代码和 Source Map。进度保存在当前浏览器的 `hgxcds_game_v1`，不支持跨设备同步。
 
 ## GitHub Pages 发布
 
 沿用 main 分支根目录发布，仓库保留 `.nojekyll`。推送 main 后 GitHub Pages 自动发布根目录现有 Web 文件；Creator 构建需先在本地完成，GitHub 不负责运行 Creator。可编辑源码随仓库单独保留在 source/。
 
-当前源码内容 ID：`a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e`。
+当前源码内容 ID：`a516b4fac616e84a38e11e53243a826078ee8907a250d71759a8520ac0d8b01d`。

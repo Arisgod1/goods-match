@@ -1,5 +1,5 @@
 {
-  "sourceId": "a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e",
+  "sourceId": "a516b4fac616e84a38e11e53243a826078ee8907a250d71759a8520ac0d8b01d",
   "files": [
     {
       "file": ".creator/asset-template/typescript/Custom Script Template Help Documentation.url",
@@ -3972,6 +3972,11 @@
       "sha256": "efee9d8e449c1308ae03c49585fe8e708fab0d0b95194b2c0deef78b13a92e68"
     },
     {
+      "file": "build-templates/common/application.ejs",
+      "bytes": 1167,
+      "sha256": "b5f0d761e124a2dde3c36e635b478011177f74aeded70f077932ac2b46ab7974"
+    },
+    {
       "file": "build-templates/templates-version.json",
       "bytes": 58,
       "sha256": "8aa055387b0b22d85e95580798793bdadaaa05d1941e30d1987733471c0b348b"
@@ -4033,8 +4038,8 @@
     },
     {
       "file": "docs/web-migration.md",
-      "bytes": 2416,
-      "sha256": "fe68dd44e9ad53713f1abdbab8825673fd31f46369970626a711fde4a34c6b96"
+      "bytes": 2758,
+      "sha256": "134962177ebda09fa58c4f958ba9ba911d6c8abd1851f71d1a888803c3c8ddaa"
     },
     {
       "file": "excel2ts/ExportToTs.bat",
@@ -4128,8 +4133,8 @@
     },
     {
       "file": "tools/test-pipeline.cjs",
-      "bytes": 5174,
-      "sha256": "5607edb24bbbf8b1ba1902f49cbe8d0cc491bf6c382bc9dd184e185c0d2f9e1d"
+      "bytes": 6051,
+      "sha256": "8a5a01e16c829e8302744fe2189bdeb30db11f88ae897fb6cf8686648ed8583b"
     },
     {
       "file": "tools/test-resources.cjs",
