@@ -1,1 +1,177 @@
-{"importBase":"import","nativeBase":"native","name":"audio","deps":[],"uuids":["01QTwJFLZMg7cOHQxNXmv4","0aZJxyO7hJ+5caWY1OKZRP","17S6J6cd1AoJ3AsDhCuqeN","287NDJZaNMArkmLReqEJz0","30tjPZ3U1JJ7X9M0ajhicH","34FW//2sJBAqSeMV2JOz+o","44QZXRjnxNVLpM26PCCZ5E","4b0Jlh1KFO6rs5DlG36oQw","50QfQlpWpIq5j8+szCCsFt","51KmoIwyFABaZd34ZueN3L","51NB01u15AYp0YbOWZ04iV","54Xv4hvHBMh4qAMWA58W2y","56fwwlpKlF04XrPr6fTsYW","58HMi/DI1KWYSAF2ZK7XNS","63qbbV3JdBH5BYVDL0xH+T","65WQSN8URL4aV1XC2d8uzV","6filmIdAtFJ7dbYJ9saWVf","71QywPZchM8quF1a07NIs2","81S3cDN3hL2K42P2y0GDKl","b8EjFnWRFMbaXeegcT/Cky","bayF83/u1O07Agocnh84dk","bazSn/RfNL7o1FiO5D5JuD","c0+oW0HL1J8YIaFvOSHKYa","c2B75lAEBHTJAGAN0ZjFkR","f1mWA/PJdPzbrd+nXnirqW","fao/p6sdREHLuFkmNJDOFs"],"paths":{"0":["bomb_6",0,1],"1":["游戏内音乐2",0,1],"2":["倒计时",0,1],"3":["游戏内音乐0",0,1],"4":["消除音效",0,1],"5":["通关成功",0,1],"6":["抽奖转盘",0,1],"7":["通关失败",0,1],"8":["转换道具",0,1],"9":["放下消除物",0,1],"10":["灯泡道具",0,1],"11":["游戏内音乐1",0,1],"12":["bomb_2",0,1],"13":["bomb_1",0,1],"14":["bomb_3",0,1],"15":["点击消除物",0,1],"16":["bomb_5",0,1],"17":["冰冻道具",0,1],"18":["星星道具",0,1],"19":["bomb_7",0,1],"20":["btnClick",0,1],"21":["获得金币1",0,1],"22":["主界面音乐",0,1],"23":["bomb_4",0,1],"24":["获得金币",0,1],"25":["bomb_8",0,1]},"scenes":{},"packs":{},"versions":{"import":[],"native":[]},"redirect":[],"debug":false,"extensionMap":{},"hasPreloadScript":true,"dependencyRelationships":{},"types":["cc.AudioClip"]}
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "audio",
+    "deps": [],
+    "uuids": [
+        "01413c09-14b6-4c83-b70e-1d0c4d5e6bf8",
+        "0a649c72-3bb8-49fb-971a-598d4e29944f",
+        "174ba27a-71dd-40a0-9dc0-b03842baa78d",
+        "28ecd0c9-65a3-4c02-b926-2d17aa109cf4",
+        "30b633d9-dd4d-4927-b5fd-3346a3862707",
+        "34156fff-dac2-4102-a49e-315d893b3fa8",
+        "444195d1-8e7c-4d54-ba4c-dba3c2099e44",
+        "4bd09961-d4a1-4eea-bb39-0e51b7ea8430",
+        "5041f425-a56a-48ab-98fc-faccc20ac16d",
+        "512a6a08-c321-4005-a65d-df866e78ddcb",
+        "51341d35-bb5e-4062-9d18-6ce599d38895",
+        "545efe21-bc70-4c87-8a80-316039f16db2",
+        "567f0c25-a4a9-45d3-85eb-3ebe9f4ec616",
+        "581cc8bf-0c8d-4a59-8480-17664aed7352",
+        "63a9b6d5-dc97-411f-9058-5432f4c47f93",
+        "6559048d-f144-4be1-a575-5c2d9df2ecd5",
+        "6f8a5988-740b-4527-b75b-609f6c69655f",
+        "71432c0f-65c8-4cf2-ab85-d5ad3b348b36",
+        "814b7703-3778-4bd8-ae36-3f6cb41832a5",
+        "b8123167-5911-4c6d-a5de-7a0713fc2932",
+        "bac85f37-feed-4ed3-b020-a1c9e1f38764",
+        "bacd29ff-45f3-4bee-8d45-88ee43e49b83",
+        "c0fa85b4-1cbd-49f1-821a-16f3921ca61a",
+        "c207be65-0040-474c-9006-00dd198c5911",
+        "f199603f-3c97-4fcd-badd-fa75e78aba96",
+        "faa3fa7a-b1d4-441c-bb85-9263490ce16c"
+    ],
+    "paths": {
+        "581cc8bf-0c8d-4a59-8480-17664aed7352": [
+            "bomb_1",
+            "cc.AudioClip",
+            1
+        ],
+        "567f0c25-a4a9-45d3-85eb-3ebe9f4ec616": [
+            "bomb_2",
+            "cc.AudioClip",
+            1
+        ],
+        "63a9b6d5-dc97-411f-9058-5432f4c47f93": [
+            "bomb_3",
+            "cc.AudioClip",
+            1
+        ],
+        "c207be65-0040-474c-9006-00dd198c5911": [
+            "bomb_4",
+            "cc.AudioClip",
+            1
+        ],
+        "6f8a5988-740b-4527-b75b-609f6c69655f": [
+            "bomb_5",
+            "cc.AudioClip",
+            1
+        ],
+        "01413c09-14b6-4c83-b70e-1d0c4d5e6bf8": [
+            "bomb_6",
+            "cc.AudioClip",
+            1
+        ],
+        "b8123167-5911-4c6d-a5de-7a0713fc2932": [
+            "bomb_7",
+            "cc.AudioClip",
+            1
+        ],
+        "faa3fa7a-b1d4-441c-bb85-9263490ce16c": [
+            "bomb_8",
+            "cc.AudioClip",
+            1
+        ],
+        "bac85f37-feed-4ed3-b020-a1c9e1f38764": [
+            "btnClick",
+            "cc.AudioClip",
+            1
+        ],
+        "c0fa85b4-1cbd-49f1-821a-16f3921ca61a": [
+            "主界面音乐",
+            "cc.AudioClip",
+            1
+        ],
+        "174ba27a-71dd-40a0-9dc0-b03842baa78d": [
+            "倒计时",
+            "cc.AudioClip",
+            1
+        ],
+        "71432c0f-65c8-4cf2-ab85-d5ad3b348b36": [
+            "冰冻道具",
+            "cc.AudioClip",
+            1
+        ],
+        "444195d1-8e7c-4d54-ba4c-dba3c2099e44": [
+            "抽奖转盘",
+            "cc.AudioClip",
+            1
+        ],
+        "512a6a08-c321-4005-a65d-df866e78ddcb": [
+            "放下消除物",
+            "cc.AudioClip",
+            1
+        ],
+        "814b7703-3778-4bd8-ae36-3f6cb41832a5": [
+            "星星道具",
+            "cc.AudioClip",
+            1
+        ],
+        "30b633d9-dd4d-4927-b5fd-3346a3862707": [
+            "消除音效",
+            "cc.AudioClip",
+            1
+        ],
+        "28ecd0c9-65a3-4c02-b926-2d17aa109cf4": [
+            "游戏内音乐0",
+            "cc.AudioClip",
+            1
+        ],
+        "545efe21-bc70-4c87-8a80-316039f16db2": [
+            "游戏内音乐1",
+            "cc.AudioClip",
+            1
+        ],
+        "0a649c72-3bb8-49fb-971a-598d4e29944f": [
+            "游戏内音乐2",
+            "cc.AudioClip",
+            1
+        ],
+        "51341d35-bb5e-4062-9d18-6ce599d38895": [
+            "灯泡道具",
+            "cc.AudioClip",
+            1
+        ],
+        "6559048d-f144-4be1-a575-5c2d9df2ecd5": [
+            "点击消除物",
+            "cc.AudioClip",
+            1
+        ],
+        "f199603f-3c97-4fcd-badd-fa75e78aba96": [
+            "获得金币",
+            "cc.AudioClip",
+            1
+        ],
+        "bacd29ff-45f3-4bee-8d45-88ee43e49b83": [
+            "获得金币1",
+            "cc.AudioClip",
+            1
+        ],
+        "5041f425-a56a-48ab-98fc-faccc20ac16d": [
+            "转换道具",
+            "cc.AudioClip",
+            1
+        ],
+        "4bd09961-d4a1-4eea-bb39-0e51b7ea8430": [
+            "通关失败",
+            "cc.AudioClip",
+            1
+        ],
+        "34156fff-dac2-4102-a49e-315d893b3fa8": [
+            "通关成功",
+            "cc.AudioClip",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {},
+    "hasPreloadScript": true,
+    "dependencyRelationships": {}
+}

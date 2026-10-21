@@ -1,6 +1,19 @@
+# Local files and credentials
 .DS_Store
-*.map
-*.ts
-*.xlsx
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+.npmrc
+.pypirc
+.netrc
+# Creator-generated files and dependencies
+source/library/
+source/temp/
+source/local/
+source/build/
+source/profiles/
+source/node_modules/
+source/excel2ts/node_modules/
+source/settings/v2/packages/information.json

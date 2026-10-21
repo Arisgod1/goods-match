@@ -1,0 +1,26 @@
+{
+    "entryScene": "assets/scenes/main.scene",
+    "options": {
+        "name": "货柜消除大师",
+        "debug": false,
+        "md5Cache": false,
+        "sourceMaps": false,
+        "mainBundleCompressionType": "merge_dep",
+        "mainBundleIsRemote": false,
+        "startSceneAssetBundle": false,
+        "useSplashScreen": false,
+        "packAutoAtlas": true,
+        "nativeCodeBundleMode": "both",
+        "polyfills": {
+            "asyncFunctions": true,
+            "coreJs": true
+        },
+        "packages": {}
+    },
+    "tests": [
+        "tools/test-rewards.cjs",
+        "tools/test-resources.cjs",
+        "tools/test-pipeline.cjs",
+        "tools/test-workbooks.cjs"
+    ]
+}

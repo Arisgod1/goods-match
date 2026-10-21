@@ -1,1 +1,62 @@
-{"importBase":"import","nativeBase":"native","name":"main","deps":["resources"],"uuids":["04009d330","463VzSk+lNHKzl31mlB6Rf@f9941","7dj5uJT9FMn6OrOOx83tfK","7dj5uJT9FMn6OrOOx83tfK@6c48a","absw3R29NKsKqLC1PowYa+","7dj5uJT9FMn6OrOOx83tfK@f9941","98JglpIyJPOqj0ywFgskUx@f9941","b5oqOKe9hNyL9f8IqboiXm@f9941","baIUdvKGZPgZxNbjWTFuRI","fdjsU2o1RKF5x0TziDw3jI"],"paths":{"4":["db:/assets/scenes/main",0,1],"8":["db:/internal/physics/default-physics-material",2,1],"9":["db:/internal/default_renderpipeline/builtin-forward",1,1]},"scenes":{"db://assets/scenes/main.scene":4},"packs":{"04009d330":[5,4]},"versions":{"import":[],"native":[]},"redirect":[1,"0",6,"0",7,"0"],"debug":false,"extensionMap":{},"hasPreloadScript":true,"dependencyRelationships":{},"types":["cc.SceneAsset","cc.RenderPipeline","cc.PhysicsMaterial"]}
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "main",
+    "deps": [
+        "resources"
+    ],
+    "uuids": [
+        "04009d330",
+        "46dd5cd2-93e9-4d1c-ace5-df59a507a45f@f9941",
+        "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca",
+        "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@6c48a",
+        "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
+        "98260969-2322-4f3a-a8f4-cb0160b24531@f9941",
+        "abb30dd1-dbd3-4ab0-aa8b-0b53e8c186be",
+        "b5a2a38a-7bd8-4dc8-bf5f-f08a9ba225e6@f9941",
+        "ba21476f-2866-4f81-9c4d-6e359316e448",
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+    ],
+    "paths": {
+        "abb30dd1-dbd3-4ab0-aa8b-0b53e8c186be": [
+            "db:/assets/scenes/main",
+            "cc.SceneAsset",
+            1
+        ],
+        "fd8ec536-a354-4a17-9c74-4f3883c378c8": [
+            "db:/internal/default_renderpipeline/builtin-forward",
+            "cc.RenderPipeline",
+            1
+        ],
+        "ba21476f-2866-4f81-9c4d-6e359316e448": [
+            "db:/internal/physics/default-physics-material",
+            "cc.PhysicsMaterial",
+            1
+        ]
+    },
+    "scenes": {
+        "db://assets/scenes/main.scene": "abb30dd1-dbd3-4ab0-aa8b-0b53e8c186be"
+    },
+    "packs": {
+        "04009d330": [
+            "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
+            "abb30dd1-dbd3-4ab0-aa8b-0b53e8c186be"
+        ]
+    },
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [
+        "46dd5cd2-93e9-4d1c-ace5-df59a507a45f@f9941",
+        "0",
+        "98260969-2322-4f3a-a8f4-cb0160b24531@f9941",
+        "0",
+        "b5a2a38a-7bd8-4dc8-bf5f-f08a9ba225e6@f9941",
+        "0"
+    ],
+    "debug": true,
+    "extensionMap": {},
+    "hasPreloadScript": true,
+    "dependencyRelationships": {}
+}

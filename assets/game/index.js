@@ -1,4 +1,8 @@
-System.register("chunks:///_virtual/game",[],(function(){return{execute:function(){}}}));
+System.register("chunks:///_virtual/game", [], function () {
+  return {
+    execute: function () {}
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/game', 'chunks:///_virtual/game'); 
@@ -18,3 +22,4 @@ System.register("chunks:///_virtual/game",[],(function(){return{execute:function
     };
     });
 });
+//# sourceMappingURL=index.js.map

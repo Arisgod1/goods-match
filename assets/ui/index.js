@@ -1,4 +1,8 @@
-System.register("chunks:///_virtual/ui",[],(function(){return{execute:function(){}}}));
+System.register("chunks:///_virtual/ui", [], function () {
+  return {
+    execute: function () {}
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/ui', 'chunks:///_virtual/ui'); 
@@ -18,3 +22,4 @@ System.register("chunks:///_virtual/ui",[],(function(){return{execute:function()
     };
     });
 });
+//# sourceMappingURL=index.js.map

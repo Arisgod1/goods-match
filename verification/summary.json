@@ -1,0 +1,44 @@
+{
+  "sourceId": "a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e",
+  "sourceFiles": 830,
+  "sourceFileHashesVerified": true,
+  "sourceDirectory": "source",
+  "webDirectory": ".",
+  "archive": false,
+  "creatorVersion": "3.8.3",
+  "debug": true,
+  "sourceMaps": true,
+  "businessScriptLines": 9319,
+  "engineModuleLines": 106233,
+  "businessSourceMapExists": true,
+  "standaloneInstallTestsBuildPassed": true,
+  "businessRegressionGroups": 40,
+  "existingTypeScriptErrors": 183,
+  "newTypeScriptErrors": 0,
+  "originalBuildUnchanged": true,
+  "accountMetadataExcluded": true,
+  "scenePrefabFiles": 29,
+  "unresolvedResourceUUIDs": 0,
+  "httpVerified": [
+    "startup",
+    "UI bundle outage: visible builtin retry button",
+    "resource recovery: retry without page reload",
+    "complete portrait home in 1280x720 viewport",
+    "final delivered build: home start button accessible",
+    "final delivered build: first level loads",
+    "final delivered build: drag placement and three-item match"
+  ],
+  "mockVerified": [
+    "picked goods cannot auto-merge",
+    "removed drag source cannot be re-created",
+    "last merge wins during removal animation at timeout",
+    "remaining goods still time out",
+    "loading retries: failure/concurrency/closed UI",
+    "portrait policy set before resources load"
+  ],
+  "limitations": [
+    "Original engine declaration diagnostics and circular dependencies remain",
+    "Not every level, physical device or browser has been manually tested",
+    "Some upstream compatibility libraries retain their distributed format"
+  ]
+}

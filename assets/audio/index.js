@@ -1,4 +1,8 @@
-System.register("chunks:///_virtual/audio",[],(function(){return{execute:function(){}}}));
+System.register("chunks:///_virtual/audio", [], function () {
+  return {
+    execute: function () {}
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/audio', 'chunks:///_virtual/audio'); 
@@ -18,3 +22,4 @@ System.register("chunks:///_virtual/audio",[],(function(){return{execute:functio
     };
     });
 });
+//# sourceMappingURL=index.js.map

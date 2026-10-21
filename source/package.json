@@ -1,0 +1,21 @@
+{
+  "name": "货柜消除大师",
+  "uuid": "b506fa30-0714-49ff-938f-b6d9173f6fb2",
+  "creator": {
+    "version": "3.8.3"
+  },
+  "_sourceId": "fdb219b9-5fd7-4529-ad12-6b18f69e88c1",
+  "_storeId": "66a776bea66ae2321fa72135ff3b53f1",
+  "scripts": {
+    "check": "node tools/cocos-project.cjs check",
+    "scan": "node tools/cocos-project.cjs scan",
+    "test": "node tools/test-rewards.cjs && node tools/test-resources.cjs && node tools/test-pipeline.cjs && node tools/test-workbooks.cjs",
+    "typecheck": "node tools/cocos-project.cjs typecheck",
+    "build:web": "node tools/cocos-project.cjs build",
+    "release": "node tools/cocos-project.cjs release",
+    "config:export": "node excel2ts/scripts/exportToTs.js"
+  },
+  "devDependencies": {
+    "node-xlsx": "0.24.0"
+  }
+}

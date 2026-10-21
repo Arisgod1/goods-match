@@ -1,50 +1,48 @@
 # 货柜消除大师
 
-整理货架，凑齐三件，享受一连串消除的爽快！一款竖屏货柜整理消除游戏，打开浏览器即可游玩，无需下载安装。
+Cocos Creator 3.8.3 + TypeScript 竖屏消除游戏。此仓库同时提供可编辑源工程和已验证的可读 Web 构建。
 
-**[🎮 点击开始游戏](https://arisgod1.github.io/goods-match/)**
+**[在线试玩](https://arisgod1.github.io/goods-match/)** · [玩法说明](docs/玩法说明.md)
 
-## 怎么玩
+## 开发与材料选择
 
-1. 观察货架上的商品，找到相同的物品。
-2. 按住并拖动前排商品，放到货架的空位上。
-3. 将三个相同商品放在同一货架上，触发消除，腾出空间继续整理。
-4. 在倒计时结束前清空关卡中的商品，完成挑战。
+- **[source/](source/README.md)**：完整可编辑工程，包括 TypeScript、场景、Prefab、美术、工作簿、构建工具及文档。训练、学习、二次创作请使用此目录。
+- 根目录 `index.html`、`application.js`、`index.js`、`assets/`、`cocos-js/`、`src/` 等：Creator 生成的 Web 试玩产物，业务 JS 未压缩并附 Source Map。部分引擎第三方兼容库保留上游格式。
+- [架构与开发文档](source/docs/) · [代码质量审查](docs/代码质量审查.md)
+- [验证结果](verification/summary.json) · [源码清单](verification/source-manifest.json) · [Web 清单及实际构建选项](verification/web-manifest.json)
 
-手机使用手指拖动，电脑使用鼠标拖动。移动前先留好空位，别让货架塞满！
+`src/` 是 Web 生成文件；`source/assets/scripts/` 才是业务 TypeScript 源码。源码与 Web 通过清单中的 sourceId 对应，不能用编译 JS 替代源工程。
 
-## 游戏特色
+## 打开、测试和重新构建
 
-- **整理与消除结合**：既要找相同商品，也要安排有限的货架空间。
-- **层层展开的货架**：清掉前排，才能逐步处理后面的商品。
-- **连击奖励**：连续消除积累连击，赚取更多金币。
-- **关卡挑战**：应对不同的货架布局、商品组合和锁链障碍。
-- **奖励与收集**：领取登录奖励、参与幸运转盘，为下一次挑战准备道具。
+使用 Creator **3.8.3** 导入 `source`，等待资源导入，打开 `assets/scenes/main.scene` 预览。首次导入会生成 TypeScript 所需的 temp 配置和引擎缓存。
 
-## 四种助力道具
+```sh
+cd source
+npm ci --allow-remote=all --ignore-scripts
+npm test
+npm run typecheck -- --out ../typecheck-report
+npm run build:web -- --target web-mobile --readable --no-archive --out ../rebuilt-web
+```
 
-| 道具 | 作用 |
-| --- | --- |
-| 冰冻道具 | 暂时冻结倒计时，留出思考时间 |
-| 灯泡道具 | 帮助消除多组商品，腾出货架空间 |
-| 转换道具 | 重新打乱商品位置，寻找新的消除机会 |
-| 星星道具 | 在一段时间内获得双倍消除金币 |
+输出目录必须尚不存在。构建依赖本机 Creator 3.8.3；详见 source/README.md 中的工具路径配置。
 
-每局每种道具可免费补领一个，超时后可免费续玩一次，增加 60 秒。通关后自动结算倍数奖励，每日进入首页还可领取补给礼包。星星币可用于幸运转盘。
+本地试玩可在仓库根目录执行：
 
-## 游玩小提示
+```sh
+python3 -m http.server 8080
+```
 
-- 优先整理能马上凑成三件的商品，减少无效移动。
-- 保留空位作为周转空间，方便交换和归类。
-- 留意后排商品和锁链货架，提前规划消除顺序。
-- 局面难以推进时，试试灯泡或转换道具。
+然后打开 http://localhost:8080/ 。
 
-## 设备与存档
+## 当前版本的验证与限制
 
-推荐使用手机竖屏游玩，电脑浏览器也可打开。支持在设置中调整音乐和音效。
+40 组业务回归及资源、交付工具、工作簿测试通过。独立副本安装、构建、启动、首关加载和拖拽消除已验证。TypeScript 仍有 183 个既有诊断，新增 0；并非完全无类型错误。审查发现的异步 UI 管理等问题记录在审查文档中，本次发布保留被审查版本，未额外修改玩法。
 
-游戏进度与设置保存在当前浏览器中，不支持跨设备同步。清除浏览器网站数据可能导致进度丢失。
+Web 构建采用 `web-mobile`、`debug: true`、`sourceMaps: true`。调试版会显示性能统计。进度保存在当前浏览器的 `hgxcds_game_v1`，不支持跨设备同步。
 
----
+## GitHub Pages 发布
 
-**[开始整理你的第一排货架 →](https://arisgod1.github.io/goods-match/)**
+沿用 main 分支根目录发布，仓库保留 `.nojekyll`。推送 main 后 GitHub Pages 自动发布根目录现有 Web 文件；Creator 构建需先在本地完成，GitHub 不负责运行 Creator。可编辑源码随仓库单独保留在 source/。
+
+当前源码内容 ID：`a0f6333f59d2ec6c22179edc0c332f2b16505a3f34967b133d8c1579696cd86e`。

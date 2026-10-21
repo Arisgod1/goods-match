@@ -1,4 +1,8 @@
-System.register("chunks:///_virtual/icon",[],(function(){return{execute:function(){}}}));
+System.register("chunks:///_virtual/icon", [], function () {
+  return {
+    execute: function () {}
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/icon', 'chunks:///_virtual/icon'); 
@@ -18,3 +22,4 @@ System.register("chunks:///_virtual/icon",[],(function(){return{execute:function
     };
     });
 });
+//# sourceMappingURL=index.js.map
